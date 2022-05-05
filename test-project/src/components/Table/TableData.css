@@ -1,0 +1,16 @@
+.tbl-header {
+    background-color: #474955;
+    color: white;
+}
+
+.tbl-border {
+    border: 1px #474955;
+}
+
+.tbl-font {
+    font-family: Roboto, serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 19px;
+    letter-spacing: 0em;
+}

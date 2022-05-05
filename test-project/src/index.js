@@ -4,18 +4,19 @@ import { Provider } from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { createStore } from 'redux';
 
 const initialState = {
-  box: [],
+  posts: [],
 };
 
 function playlist(state = initialState, action) {
   switch (action.type) {
-    case 'ADD_ITEM_TO_BOX':
+    case 'ADD_TO_REDUX':
       return {
         ...state,
-        box: [...state.box, action.payload]
+        posts: [...state.posts, action.data]
       };
     
 
