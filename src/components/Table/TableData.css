@@ -1,0 +1,38 @@
+.tbl-header {
+  background-color: #474955;
+  color: white;
+}
+
+.tbl-border {
+  border: 1px #474955;
+  height: 54px;
+}
+
+.tbl-font {
+  font-family: Roboto, serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0em;
+}
+
+.id-format {
+  width: 6%;
+}
+
+.title-format {
+  width: 54%;
+  text-align: left;
+}
+
+.content-format {
+  width: 40%;
+  text-align: left;
+}
+
+.full-content td {
+  height: 82px;
+}
+
+.empty-content {
+  height: 56px;
+}
