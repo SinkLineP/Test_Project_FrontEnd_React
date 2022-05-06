@@ -9,6 +9,9 @@ import { createStore } from 'redux';
 
 const initialState = {
   posts: [],
+  currentPageTable: {
+    index: 1,
+  },
 };
 
 function playlist(state = initialState, action) {
@@ -17,6 +20,11 @@ function playlist(state = initialState, action) {
       return {
         ...state,
         posts: [...state.posts, action.data]
+      };
+    case 'SAVE_CURRENT_PAGE':
+      return {
+        ...state,
+        currentPageTable: {...state.currentPageTable, index:action.data}
       };
     
 
