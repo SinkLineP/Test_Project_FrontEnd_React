@@ -20,6 +20,9 @@ const initialState = {
   },
   isSortedId: {
     index: false,
+  },
+  Search: {
+    value: "",
   }
 };
 
@@ -60,6 +63,11 @@ function playlist(state = initialState, action) {
       return {
         ...state,
         isSortedId: {...state.isSortedId, index: action.data}
+      };
+    case 'ADD_VALUE_SEARCH':
+      return {
+        ...state,
+        Search: {...state.Search, value: action.data}
       };
 
 

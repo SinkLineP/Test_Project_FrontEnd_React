@@ -3,6 +3,7 @@ import './App.css';
 import TableData from './components/Table/TableData';
 import axios from "axios";
 import { connect } from "react-redux";
+import Search from "./components/Search/Search";
 
 class App extends Component {
 
@@ -17,6 +18,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Search />
         <TableData/>
       </div>
     );
