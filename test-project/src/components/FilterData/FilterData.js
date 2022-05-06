@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {connect} from "react-redux";
 import "./FilterData.css";
+import arrowDown from "./Image/arrow-white-btn.svg"
 
 class FilterData extends Component {
   render() {
@@ -64,11 +65,12 @@ class FilterData extends Component {
     }
 
 
+
     return(
       <>
-        <th><button id={"id"} className={"custom-thead-btn"} onClick={sortId}>ID</button></th>
-        <th><button id={"title"} className={"custom-thead-btn"} onClick={sortTitle}>Заголовок</button></th>
-        <th><button id={"desc"} className={"custom-thead-btn"} onClick={sortDesc}>Описание</button></th>
+        <th><button id={"id"} className={"custom-thead-btn"} onClick={sortId}>ID <img src={arrowDown} className={"arrow-dropdown"} /></button></th>
+        <th><button id={"title"} className={"custom-thead-btn"} onClick={sortTitle}>Заголовок <img src={arrowDown} className={"arrow-dropdown"} /></button></th>
+        <th><button id={"desc"} className={"custom-thead-btn"} onClick={sortDesc}>Описание <img src={arrowDown} className={"arrow-dropdown"} /></button></th>
       </>
     );
   }

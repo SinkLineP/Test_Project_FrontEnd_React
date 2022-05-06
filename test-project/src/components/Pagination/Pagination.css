@@ -14,7 +14,7 @@
   border: none;
 }
 
-.pagination a.active {
+.pagination a:focus {
   background: none;
   color: #7EBC3C;
 }
@@ -24,13 +24,17 @@
   color: #7EBC3C;
 }
 
-
+.pos-number-pages {
+  margin: 0 auto;
+}
 
 .pos-prev {
-  margin-right: 28%;
+  margin: 0 auto 0px 20px;
 }
 
 .pos-next {
-  margin-left: 28%;
+  margin: 0 40px 0px auto;
 }
+
+
 

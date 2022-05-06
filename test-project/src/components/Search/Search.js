@@ -4,11 +4,7 @@ import "./Search.css";
 import searchImg from "./Image/search.svg";
 
 class Search extends Component {
-
-
   render() {
-
-
     return (
       <>
         <div>
@@ -19,7 +15,7 @@ class Search extends Component {
               placeholder={"Поиск"}
               onChange={(event => {this.props.onSaveValueSearch(event.target.value)})}
             />
-            <button className={"search-btn"}>
+            <button className={"search-btn"} onClick={(e) => {e.preventDefault()}}>
               <img className={"search-img"} src={searchImg}  alt={"search"}/>
             </button>
           </form>

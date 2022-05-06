@@ -7,46 +7,38 @@ import FilterData from "../FilterData/FilterData";
 
 
 class TableData extends Component {
-
-
   render() {
+
     const postPerPage = 10;
     const currentPage = this.props.currentPageTable.index;
     const lastPostIndex = currentPage * postPerPage;
     const firstPostIndex = lastPostIndex - postPerPage;
     const currentPosts = this.props.posts.slice(firstPostIndex, lastPostIndex);
+
     const valueSearch = this.props.Search.value;
+    const allPosts = this.props.posts;
 
     const paginate = (pageNumbers) => {
       this.props.onAddCurrentPageTable(pageNumbers);
     }
 
     const nextPage = () => {
-      this.props.onAddCurrentPageTable(currentPage + 1 > 10 ? 1 : currentPage + 1);
+      const addCurrentPage = currentPage + 1 > localStorage.getItem("countPages") ? 1 : currentPage + 1;
+      this.props.onAddCurrentPageTable(addCurrentPage);
     }
 
     const prevPage = () => {
-      this.props.onAddCurrentPageTable(currentPage - 1 < 1 ? 10 : currentPage - 1);
+      this.props.onAddCurrentPageTable(currentPage - 1 < 1 ? localStorage.getItem("countPages") : currentPage - 1);
     }
-
-    const allPosts = this.props.posts;
-
-    // const filteredPosts = allPosts.filter(post => {
-    //   return post.title.toLowerCase().includes(valueSearch.toLowerCase());
-    // })
 
     const filteredPosts = allPosts.filter(post => Object.keys(post).some(key =>
       String(post[key]).toLowerCase().includes(valueSearch.toLowerCase())))
 
-
-
-
-
+    const currentFilterPosts = filteredPosts.slice(firstPostIndex, lastPostIndex);
 
     return (
       <>
-
-        <Table bordered ref={this.myRef}>
+        <Table bordered>
           <thead className={"tbl-border"}>
           <tr className={"tbl-header"}>
             <FilterData/>
@@ -55,7 +47,7 @@ class TableData extends Component {
           <tbody>
           {
             valueSearch !== "" ?
-              filteredPosts.map((item, index) => {
+              currentFilterPosts.map((item) => {
                 const {id, title, body} = item;
                 return (
                   <>
@@ -68,7 +60,7 @@ class TableData extends Component {
                 )
               })
               :
-              currentPosts.map((item, index) => {
+              currentPosts.map((item) => {
                 const {id, title, body} = item;
                 return (
                   <>
@@ -80,26 +72,20 @@ class TableData extends Component {
                   </>
                 )
               })
-          }
-
-
+            }
           </tbody>
         </Table>
-
         <Pagination
           postPerPage={postPerPage}
-          totalPosts={this.props.posts.length}
+          totalPosts={valueSearch === "" ? this.props.posts.length : filteredPosts.length}
           paginate={paginate}
           prevPage={prevPage}
           nextPage={nextPage}
           currentPage={currentPage}
         />
-
       </>
     );
   }
-
-
 }
 
 export default connect(

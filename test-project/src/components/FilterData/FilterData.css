@@ -4,3 +4,11 @@
   border: none;
   height: 54px;
 }
+
+.arrow-dropdown {
+  margin-left: 10px;
+}
+
+.arrow-dropdown-rotate {
+  transform: rotate(180deg);
+}

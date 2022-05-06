@@ -3,19 +3,15 @@
   color: white;
 }
 
-
-
 .tbl-border {
   border: 1px #474955;
   height: 54px;
-  /*line-height: 54px;*/
 }
 
 .tbl-font {
   font-family: Roboto, serif;
   font-size: 14px;
   font-weight: 600;
-  /*line-height: 19px;*/
   letter-spacing: 0em;
 }
 

@@ -70,9 +70,6 @@ function playlist(state = initialState, action) {
         Search: {...state.Search, value: action.data}
       };
 
-
-
-
     default:
       return state;
   }
@@ -84,10 +81,6 @@ const store = createStore(
   playlist,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
-
-store.subscribe(() => {
-  console.log('subscribe', store.getState());
-})
 
 const container = document.getElementById('root');
 const root = createRoot(container);
